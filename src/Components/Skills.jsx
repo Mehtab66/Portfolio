@@ -14,8 +14,8 @@ const skills = [
   { name: "Tailwind CSS", level: "80%", rating: 8 },
   { name: "Stripe", level: "75%", rating: 7.5 },
   { name: "RESTful APIs", level: "85%", rating: 8.5 },
-  { name: "Vercel", level: "75%", rating: 7.5 },
-  { name: "Render", level: "70%", rating: 7 },
+  { name: "Vercel", level: "100%", rating: 10 },
+  { name: "Render", level: "100%", rating: 10 },
   { name: "Twilio", level: "65%", rating: 6.5 },
 ];
 
