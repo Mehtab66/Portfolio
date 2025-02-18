@@ -2902,6 +2902,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide@npm:^0.475.0":
+  version: 0.475.0
+  resolution: "lucide@npm:0.475.0"
+  checksum: 10c0/2b536877a4e828922a29ccf31942d7fed541f79257facb0c7c1effe1dba3ff1aacc45ef462804cfde011f0bce1925732afa91a60b72a9791debd562bef128440
+  languageName: node
+  linkType: hard
+
 "make-fetch-happen@npm:^14.0.3":
   version: 14.0.3
   resolution: "make-fetch-happen@npm:14.0.3"
@@ -3338,6 +3345,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.18"
     framer-motion: "npm:^12.4.3"
     globals: "npm:^15.14.0"
+    lucide: "npm:^0.475.0"
     lucide-react: "npm:^0.475.0"
     motion: "npm:^12.4.4"
     react: "npm:^19.0.0"

@@ -41,6 +41,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-refresh", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.19"],\
           ["framer-motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.3"],\
           ["globals", "npm:15.15.0"],\
+          ["lucide", "npm:0.475.0"],\
           ["lucide-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.475.0"],\
           ["motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.4"],\
           ["react", "npm:19.0.0"],\
@@ -3415,6 +3416,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["lucide", [\
+      ["npm:0.475.0", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/lucide-npm-0.475.0-456e9153ad-10c0.zip/node_modules/lucide/",\
+        "packageDependencies": [\
+          ["lucide", "npm:0.475.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["lucide-react", [\
       ["npm:0.475.0", {\
         "packageLocation": "../../AppData/Local/Yarn/Berry/cache/lucide-react-npm-0.475.0-76625aba31-10c0.zip/node_modules/lucide-react/",\
@@ -3928,6 +3938,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-refresh", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.19"],\
           ["framer-motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.3"],\
           ["globals", "npm:15.15.0"],\
+          ["lucide", "npm:0.475.0"],\
           ["lucide-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.475.0"],\
           ["motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.4"],\
           ["react", "npm:19.0.0"],\
