@@ -30,15 +30,17 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "npm:9.20.0"],\
           ["@lottiefiles/dotlottie-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.13.0"],\
           ["@tailwindcss/vite", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.0.6"],\
-          ["@types/react", "npm:19.0.9"],\
-          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.3"],\
+          ["@types/react", "npm:19.0.10"],\
+          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.4"],\
           ["@vitejs/plugin-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.3.4"],\
           ["eslint", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:9.20.1"],\
           ["eslint-plugin-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:7.37.4"],\
           ["eslint-plugin-react-hooks", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.1.0"],\
           ["eslint-plugin-react-refresh", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.19"],\
+          ["framer-motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.3"],\
           ["globals", "npm:15.15.0"],\
           ["lucide-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.475.0"],\
+          ["motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.4"],\
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.0"],\
           ["tailwindcss", "npm:4.0.6"],\
@@ -785,7 +787,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@lottiefiles/dotlottie-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.13.0"],\
           ["@lottiefiles/dotlottie-web", "npm:0.40.1"],\
-          ["@types/react", "npm:19.0.9"],\
+          ["@types/react", "npm:19.0.10"],\
           ["react", "npm:19.0.0"]\
         ],\
         "packagePeers": [\
@@ -838,172 +840,172 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@rollup/rollup-android-arm-eabi", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-android-arm-eabi-npm-4.34.7-c08679f5c0/node_modules/@rollup/rollup-android-arm-eabi/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-android-arm-eabi-npm-4.34.8-9116f3e969/node_modules/@rollup/rollup-android-arm-eabi/",\
         "packageDependencies": [\
-          ["@rollup/rollup-android-arm-eabi", "npm:4.34.7"]\
+          ["@rollup/rollup-android-arm-eabi", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-android-arm64", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-android-arm64-npm-4.34.7-b2dbe4eb44/node_modules/@rollup/rollup-android-arm64/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-android-arm64-npm-4.34.8-1e1f38c9b0/node_modules/@rollup/rollup-android-arm64/",\
         "packageDependencies": [\
-          ["@rollup/rollup-android-arm64", "npm:4.34.7"]\
+          ["@rollup/rollup-android-arm64", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-darwin-arm64", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-darwin-arm64-npm-4.34.7-629d8f7307/node_modules/@rollup/rollup-darwin-arm64/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-darwin-arm64-npm-4.34.8-6d8af1946a/node_modules/@rollup/rollup-darwin-arm64/",\
         "packageDependencies": [\
-          ["@rollup/rollup-darwin-arm64", "npm:4.34.7"]\
+          ["@rollup/rollup-darwin-arm64", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-darwin-x64", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-darwin-x64-npm-4.34.7-99bb0d4be4/node_modules/@rollup/rollup-darwin-x64/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-darwin-x64-npm-4.34.8-ae395fd2ea/node_modules/@rollup/rollup-darwin-x64/",\
         "packageDependencies": [\
-          ["@rollup/rollup-darwin-x64", "npm:4.34.7"]\
+          ["@rollup/rollup-darwin-x64", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-freebsd-arm64", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-freebsd-arm64-npm-4.34.7-a7cd79ed17/node_modules/@rollup/rollup-freebsd-arm64/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-freebsd-arm64-npm-4.34.8-7a9c3187f9/node_modules/@rollup/rollup-freebsd-arm64/",\
         "packageDependencies": [\
-          ["@rollup/rollup-freebsd-arm64", "npm:4.34.7"]\
+          ["@rollup/rollup-freebsd-arm64", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-freebsd-x64", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-freebsd-x64-npm-4.34.7-dd85a0539a/node_modules/@rollup/rollup-freebsd-x64/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-freebsd-x64-npm-4.34.8-dbc137f031/node_modules/@rollup/rollup-freebsd-x64/",\
         "packageDependencies": [\
-          ["@rollup/rollup-freebsd-x64", "npm:4.34.7"]\
+          ["@rollup/rollup-freebsd-x64", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-arm-gnueabihf", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-arm-gnueabihf-npm-4.34.7-b78a289c01/node_modules/@rollup/rollup-linux-arm-gnueabihf/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-arm-gnueabihf-npm-4.34.8-c85e81ad66/node_modules/@rollup/rollup-linux-arm-gnueabihf/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-arm-gnueabihf", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-arm-gnueabihf", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-arm-musleabihf", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-arm-musleabihf-npm-4.34.7-18224df799/node_modules/@rollup/rollup-linux-arm-musleabihf/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-arm-musleabihf-npm-4.34.8-5bee1f05cb/node_modules/@rollup/rollup-linux-arm-musleabihf/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-arm-musleabihf", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-arm-musleabihf", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-arm64-gnu", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-arm64-gnu-npm-4.34.7-f2ab815c4b/node_modules/@rollup/rollup-linux-arm64-gnu/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-arm64-gnu-npm-4.34.8-85370e0ee9/node_modules/@rollup/rollup-linux-arm64-gnu/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-arm64-gnu", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-arm64-gnu", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-arm64-musl", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-arm64-musl-npm-4.34.7-0dbd3436e4/node_modules/@rollup/rollup-linux-arm64-musl/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-arm64-musl-npm-4.34.8-62124c74e4/node_modules/@rollup/rollup-linux-arm64-musl/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-arm64-musl", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-arm64-musl", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-loongarch64-gnu", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-loongarch64-gnu-npm-4.34.7-e5c28b1182/node_modules/@rollup/rollup-linux-loongarch64-gnu/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-loongarch64-gnu-npm-4.34.8-9e733ee8fb/node_modules/@rollup/rollup-linux-loongarch64-gnu/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-loongarch64-gnu", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-loongarch64-gnu", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-powerpc64le-gnu", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-powerpc64le-gnu-npm-4.34.7-b512d3e8c5/node_modules/@rollup/rollup-linux-powerpc64le-gnu/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-powerpc64le-gnu-npm-4.34.8-03979b2b07/node_modules/@rollup/rollup-linux-powerpc64le-gnu/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-powerpc64le-gnu", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-powerpc64le-gnu", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-riscv64-gnu", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-riscv64-gnu-npm-4.34.7-7a3db4607c/node_modules/@rollup/rollup-linux-riscv64-gnu/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-riscv64-gnu-npm-4.34.8-7526076b0e/node_modules/@rollup/rollup-linux-riscv64-gnu/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-riscv64-gnu", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-riscv64-gnu", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-s390x-gnu", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-s390x-gnu-npm-4.34.7-9abdc9184c/node_modules/@rollup/rollup-linux-s390x-gnu/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-s390x-gnu-npm-4.34.8-e678042818/node_modules/@rollup/rollup-linux-s390x-gnu/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-s390x-gnu", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-s390x-gnu", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-x64-gnu", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-x64-gnu-npm-4.34.7-f1705c1b17/node_modules/@rollup/rollup-linux-x64-gnu/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-x64-gnu-npm-4.34.8-abde209531/node_modules/@rollup/rollup-linux-x64-gnu/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-x64-gnu", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-x64-gnu", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-linux-x64-musl", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-x64-musl-npm-4.34.7-5b4c1d258f/node_modules/@rollup/rollup-linux-x64-musl/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-x64-musl-npm-4.34.8-ee9cc4ca11/node_modules/@rollup/rollup-linux-x64-musl/",\
         "packageDependencies": [\
-          ["@rollup/rollup-linux-x64-musl", "npm:4.34.7"]\
+          ["@rollup/rollup-linux-x64-musl", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-win32-arm64-msvc", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-win32-arm64-msvc-npm-4.34.7-2867bd7e2f/node_modules/@rollup/rollup-win32-arm64-msvc/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-win32-arm64-msvc-npm-4.34.8-ad736a332f/node_modules/@rollup/rollup-win32-arm64-msvc/",\
         "packageDependencies": [\
-          ["@rollup/rollup-win32-arm64-msvc", "npm:4.34.7"]\
+          ["@rollup/rollup-win32-arm64-msvc", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-win32-ia32-msvc", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-win32-ia32-msvc-npm-4.34.7-1a9db6875f/node_modules/@rollup/rollup-win32-ia32-msvc/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-win32-ia32-msvc-npm-4.34.8-3120632073/node_modules/@rollup/rollup-win32-ia32-msvc/",\
         "packageDependencies": [\
-          ["@rollup/rollup-win32-ia32-msvc", "npm:4.34.7"]\
+          ["@rollup/rollup-win32-ia32-msvc", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@rollup/rollup-win32-x64-msvc", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "./.yarn/unplugged/@rollup-rollup-win32-x64-msvc-npm-4.34.7-04c81f8e84/node_modules/@rollup/rollup-win32-x64-msvc/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-win32-x64-msvc-npm-4.34.8-2047556725/node_modules/@rollup/rollup-win32-x64-msvc/",\
         "packageDependencies": [\
-          ["@rollup/rollup-win32-x64-msvc", "npm:4.34.7"]\
+          ["@rollup/rollup-win32-x64-msvc", "npm:4.34.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1229,28 +1231,28 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/react", [\
-      ["npm:19.0.9", {\
-        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-react-npm-19.0.9-ebfa88cc8d-10c0.zip/node_modules/@types/react/",\
+      ["npm:19.0.10", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-react-npm-19.0.10-ad7744c06a-10c0.zip/node_modules/@types/react/",\
         "packageDependencies": [\
-          ["@types/react", "npm:19.0.9"],\
+          ["@types/react", "npm:19.0.10"],\
           ["csstype", "npm:3.1.3"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@types/react-dom", [\
-      ["npm:19.0.3", {\
-        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-react-dom-npm-19.0.3-c704dfd4e3-10c0.zip/node_modules/@types/react-dom/",\
+      ["npm:19.0.4", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-react-dom-npm-19.0.4-d87a27eb4c-10c0.zip/node_modules/@types/react-dom/",\
         "packageDependencies": [\
-          ["@types/react-dom", "npm:19.0.3"]\
+          ["@types/react-dom", "npm:19.0.4"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@types-react-dom-virtual-63ce6d22c8/3/AppData/Local/Yarn/Berry/cache/@types-react-dom-npm-19.0.3-c704dfd4e3-10c0.zip/node_modules/@types/react-dom/",\
+      ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.4", {\
+        "packageLocation": "./.yarn/__virtual__/@types-react-dom-virtual-3d7d454913/3/AppData/Local/Yarn/Berry/cache/@types-react-dom-npm-19.0.4-d87a27eb4c-10c0.zip/node_modules/@types/react-dom/",\
         "packageDependencies": [\
-          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.3"],\
-          ["@types/react", "npm:19.0.9"]\
+          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.4"],\
+          ["@types/react", "npm:19.0.10"]\
         ],\
         "packagePeers": [\
           "@types/react"\
@@ -1538,8 +1540,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../AppData/Local/Yarn/Berry/cache/browserslist-npm-4.24.4-2fdeb5face-10c0.zip/node_modules/browserslist/",\
         "packageDependencies": [\
           ["browserslist", "npm:4.24.4"],\
-          ["caniuse-lite", "npm:1.0.30001699"],\
-          ["electron-to-chromium", "npm:1.5.101"],\
+          ["caniuse-lite", "npm:1.0.30001700"],\
+          ["electron-to-chromium", "npm:1.5.102"],\
           ["node-releases", "npm:2.0.19"],\
           ["update-browserslist-db", "virtual:2fdeb5face9914bb5fd94c70f084d153c80d2f09e5aabee010e4220b248dc23fca8f73c7beed0195e45ae6e2b1cb25388f709d7bfc4f00e473d573887faf4e5c#npm:1.1.2"]\
         ],\
@@ -1612,10 +1614,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["caniuse-lite", [\
-      ["npm:1.0.30001699", {\
-        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/caniuse-lite-npm-1.0.30001699-aed268ac86-10c0.zip/node_modules/caniuse-lite/",\
+      ["npm:1.0.30001700", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/caniuse-lite-npm-1.0.30001700-af88646d2b-10c0.zip/node_modules/caniuse-lite/",\
         "packageDependencies": [\
-          ["caniuse-lite", "npm:1.0.30001699"]\
+          ["caniuse-lite", "npm:1.0.30001700"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1831,10 +1833,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["electron-to-chromium", [\
-      ["npm:1.5.101", {\
-        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/electron-to-chromium-npm-1.5.101-3a8e6240c4-10c0.zip/node_modules/electron-to-chromium/",\
+      ["npm:1.5.102", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/electron-to-chromium-npm-1.5.102-b10f22e08c-10c0.zip/node_modules/electron-to-chromium/",\
         "packageDependencies": [\
-          ["electron-to-chromium", "npm:1.5.101"]\
+          ["electron-to-chromium", "npm:1.5.102"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2405,6 +2407,70 @@ const RAW_RUNTIME_STATE =
           ["foreground-child", "npm:3.3.0"],\
           ["cross-spawn", "npm:7.0.6"],\
           ["signal-exit", "npm:4.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["framer-motion", [\
+      ["npm:12.4.3", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/framer-motion-npm-12.4.3-366e8d59c8-10c0.zip/node_modules/framer-motion/",\
+        "packageDependencies": [\
+          ["framer-motion", "npm:12.4.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["npm:12.4.4", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/framer-motion-npm-12.4.4-23a597f2e4-10c0.zip/node_modules/framer-motion/",\
+        "packageDependencies": [\
+          ["framer-motion", "npm:12.4.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:08f58c44f8c8d193df708100e3f56c264a9ca005e69eccc474663aac61a101b9d8ae6292c4479376a197d3c776bb882b4fb3ac4dc9f08baf11b2744652d014a5#npm:12.4.4", {\
+        "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-d8f78379e5/3/AppData/Local/Yarn/Berry/cache/framer-motion-npm-12.4.4-23a597f2e4-10c0.zip/node_modules/framer-motion/",\
+        "packageDependencies": [\
+          ["framer-motion", "virtual:08f58c44f8c8d193df708100e3f56c264a9ca005e69eccc474663aac61a101b9d8ae6292c4479376a197d3c776bb882b4fb3ac4dc9f08baf11b2744652d014a5#npm:12.4.4"],\
+          ["@emotion/is-prop-valid", null],\
+          ["@types/emotion__is-prop-valid", null],\
+          ["@types/react", "npm:19.0.10"],\
+          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.4"],\
+          ["motion-dom", "npm:12.4.4"],\
+          ["motion-utils", "npm:12.0.0"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.0"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@emotion/is-prop-valid",\
+          "@types/emotion__is-prop-valid",\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.3", {\
+        "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-e66c7581b1/3/AppData/Local/Yarn/Berry/cache/framer-motion-npm-12.4.3-366e8d59c8-10c0.zip/node_modules/framer-motion/",\
+        "packageDependencies": [\
+          ["framer-motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.3"],\
+          ["@emotion/is-prop-valid", null],\
+          ["@types/emotion__is-prop-valid", null],\
+          ["@types/react", "npm:19.0.10"],\
+          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.4"],\
+          ["motion-dom", "npm:12.0.0"],\
+          ["motion-utils", "npm:12.0.0"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.0"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@emotion/is-prop-valid",\
+          "@types/emotion__is-prop-valid",\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3340,7 +3406,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/lucide-react-virtual-128cd2c268/3/AppData/Local/Yarn/Berry/cache/lucide-react-npm-0.475.0-76625aba31-10c0.zip/node_modules/lucide-react/",\
         "packageDependencies": [\
           ["lucide-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.475.0"],\
-          ["@types/react", "npm:19.0.9"],\
+          ["@types/react", "npm:19.0.10"],\
           ["react", "npm:19.0.0"]\
         ],\
         "packagePeers": [\
@@ -3483,6 +3549,65 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../AppData/Local/Yarn/Berry/cache/mkdirp-npm-3.0.1-f94bfa769e-10c0.zip/node_modules/mkdirp/",\
         "packageDependencies": [\
           ["mkdirp", "npm:3.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["motion", [\
+      ["npm:12.4.4", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/motion-npm-12.4.4-08abf42e95-10c0.zip/node_modules/motion/",\
+        "packageDependencies": [\
+          ["motion", "npm:12.4.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.4", {\
+        "packageLocation": "./.yarn/__virtual__/motion-virtual-08f58c44f8/3/AppData/Local/Yarn/Berry/cache/motion-npm-12.4.4-08abf42e95-10c0.zip/node_modules/motion/",\
+        "packageDependencies": [\
+          ["motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.4"],\
+          ["@emotion/is-prop-valid", null],\
+          ["@types/emotion__is-prop-valid", null],\
+          ["@types/react", "npm:19.0.10"],\
+          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.4"],\
+          ["framer-motion", "virtual:08f58c44f8c8d193df708100e3f56c264a9ca005e69eccc474663aac61a101b9d8ae6292c4479376a197d3c776bb882b4fb3ac4dc9f08baf11b2744652d014a5#npm:12.4.4"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.0"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@emotion/is-prop-valid",\
+          "@types/emotion__is-prop-valid",\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["motion-dom", [\
+      ["npm:12.0.0", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/motion-dom-npm-12.0.0-857d19b9da-10c0.zip/node_modules/motion-dom/",\
+        "packageDependencies": [\
+          ["motion-dom", "npm:12.0.0"],\
+          ["motion-utils", "npm:12.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:12.4.4", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/motion-dom-npm-12.4.4-d68ef9ec84-10c0.zip/node_modules/motion-dom/",\
+        "packageDependencies": [\
+          ["motion-dom", "npm:12.4.4"],\
+          ["motion-utils", "npm:12.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["motion-utils", [\
+      ["npm:12.0.0", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/motion-utils-npm-12.0.0-452fbe000e-10c0.zip/node_modules/motion-utils/",\
+        "packageDependencies": [\
+          ["motion-utils", "npm:12.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3771,15 +3896,17 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "npm:9.20.0"],\
           ["@lottiefiles/dotlottie-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.13.0"],\
           ["@tailwindcss/vite", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.0.6"],\
-          ["@types/react", "npm:19.0.9"],\
-          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.3"],\
+          ["@types/react", "npm:19.0.10"],\
+          ["@types/react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.4"],\
           ["@vitejs/plugin-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.3.4"],\
           ["eslint", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:9.20.1"],\
           ["eslint-plugin-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:7.37.4"],\
           ["eslint-plugin-react-hooks", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.1.0"],\
           ["eslint-plugin-react-refresh", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.19"],\
+          ["framer-motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.3"],\
           ["globals", "npm:15.15.0"],\
           ["lucide-react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.475.0"],\
+          ["motion", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:12.4.4"],\
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.0"],\
           ["tailwindcss", "npm:4.0.6"],\
@@ -3880,7 +4007,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/react-dom-virtual-985dba8b0c/3/AppData/Local/Yarn/Berry/cache/react-dom-npm-19.0.0-b7981c573e-10c0.zip/node_modules/react-dom/",\
         "packageDependencies": [\
           ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:19.0.0"],\
-          ["@types/react", "npm:19.0.9"],\
+          ["@types/react", "npm:19.0.10"],\
           ["react", "npm:19.0.0"],\
           ["scheduler", "npm:0.25.0"]\
         ],\
@@ -3982,29 +4109,29 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["rollup", [\
-      ["npm:4.34.7", {\
-        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/rollup-npm-4.34.7-a836f095c8-10c0.zip/node_modules/rollup/",\
+      ["npm:4.34.8", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/rollup-npm-4.34.8-a5b9f2d2dd-10c0.zip/node_modules/rollup/",\
         "packageDependencies": [\
-          ["rollup", "npm:4.34.7"],\
-          ["@rollup/rollup-android-arm-eabi", "npm:4.34.7"],\
-          ["@rollup/rollup-android-arm64", "npm:4.34.7"],\
-          ["@rollup/rollup-darwin-arm64", "npm:4.34.7"],\
-          ["@rollup/rollup-darwin-x64", "npm:4.34.7"],\
-          ["@rollup/rollup-freebsd-arm64", "npm:4.34.7"],\
-          ["@rollup/rollup-freebsd-x64", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-arm-gnueabihf", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-arm-musleabihf", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-arm64-gnu", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-arm64-musl", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-loongarch64-gnu", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-powerpc64le-gnu", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-riscv64-gnu", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-s390x-gnu", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-x64-gnu", "npm:4.34.7"],\
-          ["@rollup/rollup-linux-x64-musl", "npm:4.34.7"],\
-          ["@rollup/rollup-win32-arm64-msvc", "npm:4.34.7"],\
-          ["@rollup/rollup-win32-ia32-msvc", "npm:4.34.7"],\
-          ["@rollup/rollup-win32-x64-msvc", "npm:4.34.7"],\
+          ["rollup", "npm:4.34.8"],\
+          ["@rollup/rollup-android-arm-eabi", "npm:4.34.8"],\
+          ["@rollup/rollup-android-arm64", "npm:4.34.8"],\
+          ["@rollup/rollup-darwin-arm64", "npm:4.34.8"],\
+          ["@rollup/rollup-darwin-x64", "npm:4.34.8"],\
+          ["@rollup/rollup-freebsd-arm64", "npm:4.34.8"],\
+          ["@rollup/rollup-freebsd-x64", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-arm-gnueabihf", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-arm-musleabihf", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-arm64-gnu", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-arm64-musl", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-loongarch64-gnu", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-powerpc64le-gnu", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-riscv64-gnu", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-s390x-gnu", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-x64-gnu", "npm:4.34.8"],\
+          ["@rollup/rollup-linux-x64-musl", "npm:4.34.8"],\
+          ["@rollup/rollup-win32-arm64-msvc", "npm:4.34.8"],\
+          ["@rollup/rollup-win32-ia32-msvc", "npm:4.34.8"],\
+          ["@rollup/rollup-win32-x64-msvc", "npm:4.34.8"],\
           ["@types/estree", "npm:1.0.6"],\
           ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"]\
         ],\
@@ -4437,6 +4564,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["tslib", [\
+      ["npm:2.8.1", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/tslib-npm-2.8.1-66590b21b8-10c0.zip/node_modules/tslib/",\
+        "packageDependencies": [\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["type-check", [\
       ["npm:0.4.0", {\
         "packageLocation": "../../AppData/Local/Yarn/Berry/cache/type-check-npm-0.4.0-60565800ce-10c0.zip/node_modules/type-check/",\
@@ -4600,7 +4736,7 @@ const RAW_RUNTIME_STATE =
           ["less", null],\
           ["lightningcss", null],\
           ["postcss", "npm:8.5.2"],\
-          ["rollup", "npm:4.34.7"],\
+          ["rollup", "npm:4.34.8"],\
           ["sass", null],\
           ["sass-embedded", null],\
           ["stylus", null],\

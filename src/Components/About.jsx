@@ -51,6 +51,7 @@ const About = () => {
             <li>RESTful APIs</li>
             <li>Vercel</li>
             <li>Render</li>
+            <li>Twilio</li>
           </ul>
         </div>
       </div>

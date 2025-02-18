@@ -17,7 +17,7 @@ const Header = () => {
             analytics. Let’s create efficient, innovative solutions together.
           </p>
           <a
-            onClick={alert("Downloaded")}
+            onClick={() => alert("Downloaded")}
             href="https://drive.google.com/uc?export=download&id=1-PqR2FtjYpx4x66Q6zH7tbjP5wpL0QRl"
             className="inline-block px-8 py-3 mt-4 text-xl text-[#1F1F1F] bg-[#FF5733] rounded-lg transition-all transform hover:scale-105 duration-300"
           >
