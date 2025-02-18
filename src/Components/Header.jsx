@@ -3,7 +3,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Header = () => {
   return (
-    <header className="bg-[#1F1F1F] text-white pt-40 pb-12">
+    <section id="home" className="bg-[#1F1F1F] text-white pt-40 pb-12">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="text-center md:text-left">
           <h1 className="text-4xl md:text-5xl text-[#F5F5F5] font-extrabold mb-6 transition-transform transform hover:scale-105 duration-300">
@@ -32,7 +32,7 @@ const Header = () => {
           />
         </div>
       </div>
-    </header>
+    </section>
   );
 };
 

@@ -2,7 +2,10 @@ import React from "react";
 
 const WorkExperience = () => {
   return (
-    <section className="bg-[#1F1F1F] text-white py-16 px-6">
+    <section
+      id="work-experience"
+      className="bg-[#1F1F1F] text-white py-16 px-6"
+    >
       <div className="container mx-auto text-center md:text-left">
         <h2 className="text-4xl font-extrabold text-[#F5F5F5] text-center mb-8">
           Work Experience
