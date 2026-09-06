@@ -1,221 +1,272 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import { Activity, Shield, Stethoscope, Zap, Bot, Users, Layers, Sparkles, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    id: "evitals",
     title: "eVitals",
-    subtitle: "Remote Patient Monitoring",
-    desc: "HIPAA-compliant platform deployed across 30+ US medical practices. Integrates BP and SpO2 hardware SDKs.",
-    tags: ["React Native", "Node.js", "AWS", "HIPAA"],
-    status: "PRODUCTION",
-    color: "var(--accent)",
-    metric: "40% ↑ efficiency",
-    featured: true
+    category: "HEALTHTECH & REAL-TIME",
+    subtitle: "HIPAA-Compliant RPM & Telehealth Platform",
+    metric: "30+ US Practices • -40% Check-in Time",
+    problem: "US medical clinics faced fragmented vitals data collection, disconnected communication channels, and high manual patient check-in overhead.",
+    solution: "Architected a HIPAA-compliant cloud platform with RingCentral telephony & telehealth messaging integration, BP/SPO2 hardware SDK telemetry, medical billing, staff workflows, and real-time alerts.",
+    result: "Deployed across 30+ US medical practices, reducing manual check-in time by 40% with zero security/compliance incidents.",
+    tags: ["React Native", "Node.js", "NestJS", "RingCentral", "AWS", "HIPAA", "WebSockets"],
+    icon: <Stethoscope size={18} color="var(--accent-light)" />
   },
   {
-    title: "Social Pro",
-    subtitle: "AI Content Automation",
-    desc: "AI-driven pipeline scheduling 200+ posts/week using GPT-4 with multi-platform OAuth integrations.",
-    tags: ["MERN Stack", "GPT-4", "BullMQ", "Redis"],
-    status: "ACTIVE",
-    color: "var(--secondary)",
-    metric: "200+ posts/week",
-    featured: true
-  },
-  {
+    id: "telestroke",
     title: "Telestroke",
-    subtitle: "Neurological Evaluation System",
-    desc: "Real-time eye-tracking data streamed via WebSockets. Supports 100+ concurrent diagnostic sessions.",
-    tags: ["Node.js", "WebSocket", "Python", "D3.js"],
-    status: "RESEARCH",
-    color: "var(--tertiary)",
-    metric: "100+ sessions/day"
+    category: "HEALTHTECH & REAL-TIME",
+    subtitle: "Real-Time Neurological Evaluation System",
+    metric: "100+ Daily Sessions • Sub-Second Latency",
+    problem: "Neurologists during stroke emergencies needed zero-latency visualization of ocular movements from medical headgear for critical diagnosis.",
+    solution: "Developed high-speed Node.js + Python streaming backend sending ocular motion telemetry via WebSockets and VideoSDK directly to real-time clinical graph dashboards.",
+    result: "Reliably supports 100+ daily live diagnostic sessions with sub-second data streaming and accurate clinical synchronization.",
+    tags: ["Node.js", "Python", "WebSockets", "VideoSDK", "D3.js", "React"],
+    icon: <Activity size={18} color="var(--accent-light)" />
   },
   {
-    title: "Scam Eye",
-    subtitle: "AI Fraud Detection",
-    desc: "AI-powered fraud detection with 98% email deliverability and growing user base.",
-    tags: ["Next.js", "Firebase", "AI", "TypeScript"],
-    status: "STABLE",
-    color: "var(--accent)",
-    metric: "500+ users"
-  },
-  {
-    title: "Dermatoscope",
-    subtitle: "Medical Imaging Kiosk",
-    desc: "Kiosk-mode medical imaging with hardware-level native module controls. Deployed in 3 clinics.",
-    tags: ["React Native", "Native Modules", "Hardware"],
-    status: "DEPLOYED",
-    color: "var(--secondary)",
-    metric: "3 clinics"
-  },
-  {
-    title: "Falkie",
-    subtitle: "Enterprise Management SaaS",
-    desc: "MERN stack SaaS reducing admin overhead 35% through granular RBAC and real-time announcements.",
-    tags: ["MERN", "Socket.io", "RBAC"],
-    status: "ACTIVE",
-    color: "var(--tertiary)",
-    metric: "35% ↓ overhead"
-  },
-  {
+    id: "22rpm",
     title: "22RPM",
-    subtitle: "Vitals Monitoring App",
-    desc: "Cross-platform iOS & Android app integrating BP/SpO2 hardware SDKs for remote monitoring.",
-    tags: ["React Native", "Node.js", "SDK"],
-    status: "STABLE",
-    color: "var(--accent)",
-    metric: "iOS & Android"
+    category: "HEALTHTECH & REAL-TIME",
+    subtitle: "Remote Patient Vitals Monitoring App",
+    metric: "Instant Medical Alerts & Telemetry",
+    problem: "Physicians lacked continuous remote visibility and instant alerting when outpatient blood pressure and oxygen saturation levels crossed dangerous thresholds.",
+    solution: "Built a cross-platform React Native app integrating native Bluetooth BP and SPO2 device SDKs with instant triage alerting and encrypted doctor-patient messaging.",
+    result: "Empowered clinicians to detect patient vitals degradation early and intervene immediately.",
+    tags: ["React Native", "Node.js", "Device SDKs", "Bluetooth BLE", "Express"],
+    icon: <Zap size={18} color="var(--accent-light)" />
   },
   {
+    id: "dermatoscope",
+    title: "Dermatoscope Kiosk",
+    category: "HEALTHTECH & REAL-TIME",
+    subtitle: "Kiosk-Mode Skin Diagnostic System",
+    metric: "Active in 3 Medical Clinics",
+    problem: "Dermatology clinics struggled with cumbersome manual optical camera setups and inconsistent skin polarization lighting controls.",
+    solution: "Engineered a dedicated kiosk-mode application with native module hardware lens controls and polarization light adjustments for standardized skin imaging.",
+    result: "Successfully deployed and actively used across 3 medical clinics for standardized skin examination.",
+    tags: ["React Native", "Native Modules", "Android Kiosk", "Hardware APIs", "AWS S3"],
+    icon: <Shield size={18} color="var(--accent-light)" />
+  },
+  {
+    id: "social-pro",
+    title: "Social Pro",
+    category: "AI & SAAS",
+    subtitle: "AI-Powered Multiplatform Content Engine",
+    metric: "200+ Scheduled Posts / Week",
+    problem: "Marketing agencies spent dozens of manual hours weekly generating, formatting, and scheduling posts across fragmented social media networks.",
+    solution: "Integrated OpenAI GPT APIs into a unified multi-brand dashboard backed by BullMQ queue workers, Redis caching, and multi-platform OAuth2.",
+    result: "Automated content generation and multi-channel scheduling for 200+ posts/week per client deployment.",
+    tags: ["MERN Stack", "OpenAI GPT API", "BullMQ", "Redis", "OAuth2", "Docker"],
+    icon: <Bot size={18} color="var(--accent-light)" />
+  },
+  {
+    id: "scam-eye",
+    title: "Scam Eye",
+    category: "AI & SAAS",
+    subtitle: "Gamified AI Fraud Detection Platform",
+    metric: "500+ Users • 98% Email Delivery",
+    problem: "Users frequently fell prey to evolving online scams due to a lack of interactive and engaging cybersecurity threat detection tools.",
+    solution: "Created a Next.js + Firebase fraud detection web application incorporating gamified learning (streaks, referrals, rewards) and automated phishing reporting.",
+    result: "Attracted 500+ registered active users while maintaining a 98% email delivery rate across transactional communications.",
+    tags: ["Next.js", "Firebase", "TypeScript", "Node.js", "SendGrid"],
+    icon: <Sparkles size={18} color="var(--accent-light)" />
+  },
+  {
+    id: "falkie",
+    title: "Falkie",
+    category: "ENTERPRISE & MOBILE",
+    subtitle: "Multi-Tenant Operations Platform",
+    metric: "-35% Admin Overhead Across Orgs",
+    problem: "Expanding organizations suffered from disjointed employee management, messy client reporting, and inadequate access hierarchies.",
+    solution: "Constructed a MERN + React Native platform featuring granular 3-tier RBAC, live Socket.IO chat, and real-time company announcement broadcasts.",
+    result: "Reduced client reporting time by 30% and cut overall administrative overhead by 35% across 3 organizations.",
+    tags: ["React", "React Native", "Node.js", "MongoDB", "Socket.IO", "RBAC"],
+    icon: <Users size={18} color="var(--accent-light)" />
+  },
+  {
+    id: "petapp",
     title: "PetApp",
-    subtitle: "AI Pet Management",
-    desc: "AI symptom checker, QR-based pet tracking, and vet booking platform.",
-    tags: ["React", "Node.js", "AI", "AWS S3"],
-    status: "BETA",
-    color: "var(--secondary)",
-    metric: "Beta launch"
+    category: "ENTERPRISE & MOBILE",
+    subtitle: "AI Pet Care & QR Recovery Ecosystem",
+    metric: "End-to-End AI Pet Health & QR Recovery",
+    problem: "Pet owners lacked an integrated ecosystem for early symptom triage, lost pet recovery, and routine weight/walk tracking.",
+    solution: "Engineered an AI-powered pet care mobile application with an AI symptom checker, dynamic QR-code lost & found tag system, walk tracking, and Amazon marketplace integration.",
+    result: "Shipped a comprehensive mobile companion providing full lifecycle pet wellness management.",
+    tags: ["React Native", "Node.js", "AI Symptom API", "QR System", "AWS S3", "Stripe"],
+    icon: <Layers size={18} color="var(--accent-light)" />
   }
 ];
 
-const statusColors = {
-  PRODUCTION: "var(--accent)",
-  ACTIVE: "var(--secondary)",
-  RESEARCH: "var(--tertiary)",
-  STABLE: "var(--accent)",
-  DEPLOYED: "var(--secondary)",
-  BETA: "var(--warning)"
-};
-
-const ProjectCard = ({ project, index }) => {
-  const cardRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
-    const { left, top, width, height } = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - left) / width;
-    const y = (e.clientY - top) / height;
-    cardRef.current.style.transform = `perspective(1000px) rotateX(${(y - 0.5) * -10}deg) rotateY(${(x - 0.5) * 10}deg) scale3d(1.02, 1.02, 1.02)`;
-    cardRef.current.style.setProperty("--mouse-x", `${x * 100}%`);
-    cardRef.current.style.setProperty("--mouse-y", `${y * 100}%`);
-  };
-
-  const handleMouseLeave = () => {
-    if (!cardRef.current) return;
-    cardRef.current.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
-  };
-
-  const col = statusColors[project.status] || "var(--accent)";
-
+const CaseStudyCard = ({ p, index }) => {
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       style={{
-        padding: "30px",
+        padding: "28px",
         background: "var(--bg-card)",
-        border: "1px solid var(--glass-border)",
-        borderRadius: "16px",
+        border: "1px solid var(--border)",
+        borderRadius: "var(--radius-lg)",
         display: "flex",
         flexDirection: "column",
         gap: "16px",
-        cursor: "pointer",
-        position: "relative",
-        overflow: "hidden",
-        transition: "transform 0.12s ease-out, box-shadow 0.3s",
-        gridColumn: project.featured ? "span 1" : "span 1"
+        transition: "var(--transition)",
+        boxShadow: "0 6px 20px rgba(0,0,0,0.15)"
       }}
-      onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px ${col}33`}
-      onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "none"; handleMouseLeave(); }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "var(--border-hover)";
+        e.currentTarget.style.background = "var(--bg-card-hover)";
+        e.currentTarget.style.transform = "translateY(-3px)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "var(--border)";
+        e.currentTarget.style.background = "var(--bg-card)";
+        e.currentTarget.style.transform = "translateY(0)";
+      }}
     >
-      {/* Spotlight */}
-      <div style={{ position: "absolute", inset: 0, background: `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.04) 0%, transparent 60%)`, pointerEvents: "none" }}></div>
-
-      {/* Top row */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-        <span style={{ fontSize: "0.6rem", fontFamily: "var(--font-mono)", color: col, background: `${col}15`, border: `1px solid ${col}40`, padding: "3px 10px", borderRadius: "4px", letterSpacing: "2px" }}>
-          ● {project.status}
-        </span>
-        <span style={{ fontSize: "0.6rem", fontFamily: "var(--font-mono)", color: "var(--text-dim)" }}>
+      {/* Top Meta Bar */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ padding: "6px", background: "var(--accent-muted)", borderRadius: "var(--radius-sm)", display: "flex" }}>
+            {p.icon}
+          </div>
+          <span style={{ fontSize: "0.7rem", fontFamily: "var(--font-mono)", color: "var(--text-muted)", fontWeight: 600 }}>
+            {p.category}
+          </span>
+        </div>
+        <span style={{ fontSize: "0.72rem", fontFamily: "var(--font-mono)", color: "var(--text-dim)" }}>
           #{String(index + 1).padStart(2, "0")}
         </span>
       </div>
 
-      {/* Title */}
+      {/* Header */}
       <div>
-        <h3 style={{ fontSize: "1.4rem", fontFamily: "var(--font-display)", marginBottom: "4px", color: "#fff" }}>{project.title}</h3>
-        <p style={{ fontSize: "0.7rem", fontFamily: "var(--font-mono)", color: col, letterSpacing: "1px" }}>{project.subtitle}</p>
+        <h3 style={{ fontSize: "1.45rem", fontWeight: 800, color: "#fff", marginBottom: "3px" }}>
+          {p.title}
+        </h3>
+        <p style={{ fontSize: "0.82rem", color: "var(--text-secondary)", fontWeight: 500 }}>
+          {p.subtitle}
+        </p>
       </div>
 
-      <p style={{ fontSize: "0.85rem", color: "var(--text-dim)", lineHeight: 1.7, flexGrow: 1 }}>{project.desc}</p>
-
-      {/* Metric highlight */}
-      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: col, boxShadow: `0 0 8px ${col}` }}></div>
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: col }}>{project.metric}</span>
+      {/* Impact Highlight */}
+      <div style={{
+        padding: "8px 12px",
+        background: "rgba(255, 255, 255, 0.03)",
+        border: "1px solid var(--border)",
+        borderRadius: "var(--radius-sm)",
+        display: "flex",
+        alignItems: "center",
+        gap: "8px"
+      }}>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "var(--accent-light)", fontWeight: 700 }}>
+          OUTCOME:
+        </span>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", color: "#f8fafc", fontWeight: 600 }}>
+          {p.metric}
+        </span>
       </div>
 
-      {/* Tags */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-        {project.tags.map((tag, i) => (
-          <span key={i} style={{ fontSize: "0.65rem", fontFamily: "var(--font-mono)", color: "rgba(255,255,255,0.4)", background: "rgba(255,255,255,0.03)", padding: "4px 10px", borderRadius: "4px", border: "1px solid rgba(255,255,255,0.05)" }}>
+      {/* Problem -> Solution -> Result Breakdown */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "8px", flexGrow: 1 }}>
+        <div style={{ background: "rgba(255, 255, 255, 0.02)", padding: "10px 12px", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", color: "#94a3b8", fontWeight: 700, display: "block", marginBottom: "2px" }}>
+            CHALLENGE
+          </span>
+          <p style={{ fontSize: "0.82rem", color: "var(--text-secondary)", lineHeight: 1.55 }}>
+            {p.problem}
+          </p>
+        </div>
+
+        <div style={{ background: "rgba(255, 255, 255, 0.02)", padding: "10px 12px", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", color: "var(--accent-light)", fontWeight: 700, display: "block", marginBottom: "2px" }}>
+            ARCHITECTURE & SOLUTION
+          </span>
+          <p style={{ fontSize: "0.82rem", color: "var(--text-primary)", lineHeight: 1.55 }}>
+            {p.solution}
+          </p>
+        </div>
+
+        <div style={{ background: "rgba(255, 255, 255, 0.02)", padding: "10px 12px", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", color: "#60a5fa", fontWeight: 700, display: "block", marginBottom: "2px" }}>
+            RESULT
+          </span>
+          <p style={{ fontSize: "0.82rem", color: "var(--text-secondary)", lineHeight: 1.55 }}>
+            {p.result}
+          </p>
+        </div>
+      </div>
+
+      {/* Tech Tags */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "auto", paddingTop: "6px" }}>
+        {p.tags.map((tag, i) => (
+          <span key={i} style={{ fontSize: "0.68rem", fontFamily: "var(--font-mono)", color: "var(--text-muted)", background: "rgba(255, 255, 255, 0.02)", padding: "3px 8px", borderRadius: "4px", border: "1px solid var(--border)" }}>
             {tag}
           </span>
         ))}
       </div>
-
-      {/* Bottom border glow */}
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "1px", background: `linear-gradient(90deg, transparent, ${col}60, transparent)` }}></div>
     </div>
   );
 };
 
 const Projects = () => {
   const [filter, setFilter] = useState("ALL");
-  const filters = ["ALL", "PRODUCTION", "ACTIVE", "STABLE", "RESEARCH"];
+  const filters = ["ALL", "HEALTHTECH & REAL-TIME", "AI & SAAS", "ENTERPRISE & MOBILE"];
 
-  const filtered = filter === "ALL" ? projects : projects.filter(p => p.status === filter);
+  const filtered = filter === "ALL" ? projects : projects.filter(p => p.category === filter);
 
   return (
-    <section id="projects" style={{ position: "relative", padding: "120px 20px" }}>
-      <div style={{ position: "absolute", left: "20px", top: "50%", transform: "translateY(-50%)", fontFamily: "var(--font-mono)", fontWeight: 800, color: "rgba(255,255,255,0.015)", fontSize: "20rem", pointerEvents: "none", zIndex: -1 }}>03</div>
-
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        {/* Header */}
-        <div className="reveal" style={{ marginBottom: "60px" }}>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "var(--accent)", letterSpacing: "4px", marginBottom: "16px" }}>&gt; ./projects --list-all</p>
-          <h2 style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", marginBottom: "20px", fontFamily: "var(--font-display)" }}>
-            CURATED <span style={{ background: "linear-gradient(135deg, var(--accent), var(--secondary))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>REPOS</span>
+    <section id="projects">
+      <div style={{ maxWidth: "1150px", margin: "0 auto" }}>
+        
+        {/* Section Header */}
+        <div className="reveal" style={{ marginBottom: "40px" }}>
+          <div className="section-tag">
+            <span className="section-tag-dot"></span> Engineering Case Studies
+          </div>
+          <h2 style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)", marginBottom: "16px", fontWeight: 800 }}>
+            Featured <span className="text-metallic">Projects</span>.
           </h2>
-          <p style={{ color: "var(--text-dim)", maxWidth: "500px", lineHeight: 1.7, fontSize: "1rem" }}>
-            Production-grade systems spanning healthcare, AI, SaaS, and enterprise — each built for scale and performance.
+          <p style={{ color: "var(--text-secondary)", maxWidth: "700px", fontSize: "1.05rem", lineHeight: 1.7 }}>
+            Detailed breakdown of production systems across healthcare telemetry, hardware integrations, AI workflows, and multi-tenant architectures.
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="reveal" style={{ display: "flex", gap: "10px", marginBottom: "40px", flexWrap: "wrap" }}>
-          {filters.map((f) => (
-            <button key={f} onClick={() => setFilter(f)} style={{
-              background: filter === f ? "var(--accent)" : "transparent",
-              color: filter === f ? "#000" : "var(--text-dim)",
-              border: `1px solid ${filter === f ? "var(--accent)" : "var(--glass-border)"}`,
-              padding: "8px 20px",
-              borderRadius: "100px",
-              cursor: "pointer",
-              fontFamily: "var(--font-mono)",
-              fontSize: "0.7rem",
-              letterSpacing: "1px",
-              transition: "all 0.2s"
-            }}>
-              {f}
-            </button>
+        {/* Filter Navigation */}
+        <div className="reveal" style={{ display: "flex", gap: "8px", marginBottom: "36px", flexWrap: "wrap" }}>
+          {filters.map((f) => {
+            const isSelected = filter === f;
+            return (
+              <button
+                key={f}
+                onClick={() => setFilter(f)}
+                style={{
+                  background: isSelected ? "var(--accent)" : "rgba(255, 255, 255, 0.03)",
+                  color: isSelected ? "#090a0f" : "var(--text-secondary)",
+                  border: `1px solid ${isSelected ? "var(--accent)" : "var(--border)"}`,
+                  padding: "6px 16px",
+                  borderRadius: "var(--radius-full)",
+                  cursor: "pointer",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.78rem",
+                  fontWeight: 600,
+                  transition: "var(--transition)"
+                }}
+              >
+                {f}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Project Cards Grid */}
+        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "20px" }}>
+          {filtered.map((p, i) => (
+            <CaseStudyCard key={p.id} p={p} index={i} />
           ))}
         </div>
 
-        {/* Grid */}
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "20px" }}>
-          {filtered.map((p, i) => <ProjectCard key={p.title} project={p} index={i} />)}
-        </div>
       </div>
     </section>
   );

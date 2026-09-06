@@ -1,143 +1,152 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
+import { Activity, Code, Server, Cloud, Check } from "lucide-react";
 
 const skillGroups = [
   {
-    category: "FRONTEND",
-    icon: "◈",
-    color: "var(--accent)",
+    category: "HealthTech & Real-Time",
+    icon: <Activity size={18} color="var(--accent-light)" />,
     skills: [
-      { name: "React / Next.js", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "React Native", level: 92 },
-      { name: "Tailwind / CSS", level: 90 },
-    ],
+      "WebSockets & Socket.IO",
+      "VideoSDK Telemetry Streaming",
+      "Medical Device SDKs (BP/SPO2)",
+      "RingCentral Telephony & APIs",
+      "HIPAA Compliance & Protocols"
+    ]
   },
   {
-    category: "BACKEND",
-    icon: "⬡",
-    color: "var(--secondary)",
+    category: "Frontend & Mobile",
+    icon: <Code size={18} color="var(--accent-light)" />,
     skills: [
-      { name: "Node.js / Express", level: 88 },
-      { name: "Python / Django", level: 80 },
-      { name: "PostgreSQL", level: 82 },
-      { name: "MongoDB", level: 90 },
-    ],
+      "React & Next.js",
+      "React Native (iOS & Android)",
+      "TypeScript & ES6+ JavaScript",
+      "Tailwind CSS & Component Systems",
+      "State Management & Optimization"
+    ]
   },
   {
-    category: "INFRASTRUCTURE",
-    icon: "◉",
-    color: "var(--tertiary)",
+    category: "Backend & Microservices",
+    icon: <Server size={18} color="var(--accent-light)" />,
     skills: [
-      { name: "AWS", level: 78 },
-      { name: "Docker", level: 82 },
-      { name: "WebSockets", level: 88 },
-      { name: "Redis / BullMQ", level: 80 },
-    ],
+      "Node.js & Express.js",
+      "NestJS Architecture",
+      "RESTful APIs & Microservices",
+      "Python Data & Web Services",
+      "BullMQ Queue Processing"
+    ]
   },
+  {
+    category: "Cloud, Database & Security",
+    icon: <Cloud size={18} color="var(--accent-light)" />,
+    skills: [
+      "AWS (EC2, S3)",
+      "MongoDB & Redis Caching",
+      "Firebase Suite",
+      "Docker & CI/CD",
+      "JWT & OAuth2 Security"
+    ]
+  }
 ];
 
-const SkillBar = ({ name, level, active, color }) => (
-  <div style={{ marginBottom: "22px" }}>
-    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px", alignItems: "center" }}>
-      <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "#fff" }}>{name}</span>
-      <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: color, fontWeight: 700 }}>{level}%</span>
-    </div>
-    <div style={{ height: "3px", background: "rgba(255,255,255,0.04)", borderRadius: "2px", overflow: "visible", position: "relative" }}>
-      <div style={{
-        height: "100%",
-        width: active ? `${level}%` : "0%",
-        background: color,
-        transition: "width 1.5s cubic-bezier(0.23, 1, 0.32, 1)",
-        borderRadius: "2px",
-        boxShadow: `0 0 12px ${color}80`,
-        position: "relative"
-      }}>
-        {/* Glow dot at end */}
-        <div style={{ position: "absolute", right: "-3px", top: "50%", transform: "translateY(-50%)", width: "7px", height: "7px", borderRadius: "50%", background: color, boxShadow: `0 0 10px ${color}` }}></div>
-      </div>
-    </div>
-  </div>
-);
-
 const Skills = () => {
-  const [active, setActive] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setActive(true);
-    }, { threshold: 0.1 });
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="skills" ref={sectionRef} style={{ position: "relative", padding: "120px 20px" }}>
-      <div style={{ position: "absolute", left: "20px", top: "50%", transform: "translateY(-50%)", fontFamily: "var(--font-mono)", fontWeight: 800, color: "rgba(255,255,255,0.015)", fontSize: "20rem", pointerEvents: "none", zIndex: -1 }}>04</div>
+    <section id="skills">
+      <div style={{ maxWidth: "1150px", margin: "0 auto" }}>
+        
+        {/* Section Header */}
+        <div className="reveal" style={{ marginBottom: "40px" }}>
+          <div className="section-tag">
+            <span className="section-tag-dot"></span> Technical Capabilities
+          </div>
+          <h2 style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)", marginBottom: "16px", fontWeight: 800 }}>
+            Skills & <span className="text-metallic">Core Competencies</span>.
+          </h2>
+          <p style={{ color: "var(--text-secondary)", maxWidth: "650px", fontSize: "1.05rem", lineHeight: 1.7 }}>
+            Technologies and frameworks utilized in architecting production platforms and hardware integrations.
+          </p>
+        </div>
 
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        {/* Header */}
-        <p className="reveal" style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "var(--accent)", letterSpacing: "4px", marginBottom: "16px" }}>&gt; npm list --global</p>
-        <h2 className="reveal" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", marginBottom: "16px", fontFamily: "var(--font-display)" }}>
-          TECHNICAL <span style={{ background: "linear-gradient(135deg, var(--secondary), var(--tertiary))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>PROWESS</span>
-        </h2>
-        <p className="reveal" style={{ color: "var(--text-dim)", maxWidth: "500px", lineHeight: 1.7, marginBottom: "60px" }}>
-          A curated set of tools and technologies I've used to ship production systems at scale.
-        </p>
-
-        {/* Skill Cards Grid */}
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+        {/* 4 Category Cards Grid */}
+        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", marginBottom: "36px" }}>
           {skillGroups.map((group, i) => (
-            <div key={i} style={{
-              background: "var(--bg-card)",
-              border: "1px solid var(--glass-border)",
-              borderRadius: "16px",
-              padding: "36px",
-              position: "relative",
-              overflow: "hidden",
-              transition: "all 0.3s"
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = group.color + "60"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--glass-border)"; }}>
-              {/* Top Label */}
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "30px" }}>
-                <span style={{ fontSize: "1.2rem", color: group.color }}>{group.icon}</span>
-                <h3 style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", letterSpacing: "3px", color: group.color }}>{group.category}</h3>
+            <div
+              key={i}
+              style={{
+                padding: "26px 24px",
+                background: "var(--bg-card)",
+                border: "1px solid var(--border)",
+                borderRadius: "var(--radius-lg)",
+                transition: "var(--transition)"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--border-hover)";
+                e.currentTarget.style.background = "var(--bg-card-hover)";
+                e.currentTarget.style.transform = "translateY(-3px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--border)";
+                e.currentTarget.style.background = "var(--bg-card)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px" }}>
+                <div style={{ padding: "8px", background: "var(--accent-muted)", borderRadius: "var(--radius-sm)", display: "flex" }}>
+                  {group.icon}
+                </div>
+                <h3 style={{ fontSize: "0.95rem", fontWeight: 700, color: "#fff" }}>
+                  {group.category}
+                </h3>
               </div>
 
-              {group.skills.map((skill, j) => (
-                <SkillBar key={j} {...skill} active={active} color={group.color} />
-              ))}
-
-              {/* Corner accent */}
-              <div style={{ position: "absolute", top: 0, right: 0, width: "80px", height: "80px", background: `radial-gradient(circle, ${group.color}10, transparent 70%)` }}></div>
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "1px", background: `linear-gradient(90deg, transparent, ${group.color}50, transparent)` }}></div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                {group.skills.map((skill, j) => (
+                  <div key={j} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.82rem", color: "var(--text-secondary)" }}>
+                    <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--accent-light)" }}></span>
+                    <span>{skill}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Additional Tech Logos Section */}
-        <div className="reveal" style={{ marginTop: "60px", padding: "40px", background: "var(--bg-card)", border: "1px solid var(--glass-border)", borderRadius: "16px" }}>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--text-dim)", letterSpacing: "3px", marginBottom: "24px" }}>// ALSO PROFICIENT WITH</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-            {["JWT", "OAuth2", "VideoSDK", "GPT-4 API", "Figma", "Git", "HIPAA", "Microservices", "REST", "GraphQL", "Firebase", "Stripe"].map((tech, i) => (
-              <span key={i} style={{
+        {/* All skills tags tray */}
+        <div className="reveal" style={{
+          padding: "24px 28px",
+          background: "var(--bg-card)",
+          border: "1px solid var(--border)",
+          borderRadius: "var(--radius-md)",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "8px",
+          alignItems: "center"
+        }}>
+          <span style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--text-muted)", marginRight: "8px" }}>
+            ADDITIONAL:
+          </span>
+          {[
+            "React", "Next.js", "Node.js", "NestJS", "Express.js", "React Native", "TypeScript",
+            "JavaScript ES6+", "REST APIs", "WebSockets", "Socket.IO", "VideoSDK", "RingCentral",
+            "JWT", "OAuth", "Firebase", "MongoDB", "Redis", "BullMQ", "AWS (EC2, S3)",
+            "Docker", "Git", "Stripe", "Mapbox", "Python", "Microservices", "HIPAA"
+          ].map((item, idx) => (
+            <span
+              key={idx}
+              style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: "0.7rem",
-                color: "var(--text-dim)",
-                border: "1px solid var(--glass-border)",
-                padding: "6px 14px",
-                borderRadius: "4px",
-                transition: "all 0.2s",
-                cursor: "default"
+                fontSize: "0.72rem",
+                color: "var(--text-secondary)",
+                background: "rgba(255, 255, 255, 0.02)",
+                border: "1px solid var(--border)",
+                padding: "4px 10px",
+                borderRadius: "var(--radius-sm)"
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = "var(--accent)"; e.currentTarget.style.borderColor = "var(--accent)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-dim)"; e.currentTarget.style.borderColor = "var(--glass-border)"; }}>
-                {tech}
-              </span>
-            ))}
-          </div>
+            >
+              {item}
+            </span>
+          ))}
         </div>
+
       </div>
     </section>
   );

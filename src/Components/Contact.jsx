@@ -1,164 +1,283 @@
 import React, { useState } from "react";
-import { Mail, Github, Linkedin, Send, Terminal, Code2, Cpu } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Copy, Check, ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
   const [status, setStatus] = useState(null);
-  const [focused, setFocused] = useState(null);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  const handleCopy = (text, type) => {
+    navigator.clipboard.writeText(text);
+    if (type === "email") {
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    } else {
+      setCopiedPhone(true);
+      setTimeout(() => setCopiedPhone(false), 2000);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("sending");
-    setTimeout(() => setStatus("success"), 1500);
+    setTimeout(() => {
+      setStatus("success");
+      const mailtoLink = `mailto:mohamadmehtabahmed@gmail.com?subject=Project Inquiry: ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message + "\n\nFrom: " + formData.name + " (" + formData.email + ")")}`;
+      window.location.href = mailtoLink;
+    }, 800);
   };
 
-  const socials = [
-    { icon: <Mail size={20} />, label: "EMAIL", value: "mohamadmehtabahmed@gmail.com", href: "mailto:mohamadmehtabahmed@gmail.com", color: "var(--accent)" },
-    { icon: <Linkedin size={20} />, label: "LINKEDIN", value: "linkedin.com/in/mehtab-ahmed058", href: "https://linkedin.com/in/mehtab-ahmed058", color: "var(--secondary)" },
-    { icon: <Github size={20} />, label: "GITHUB", value: "github.com/Mehtab66", href: "https://github.com/Mehtab66", color: "var(--tertiary)" },
-  ];
-
-  const inputStyle = (field) => ({
+  const inputStyle = {
     width: "100%",
-    background: focused === field ? "rgba(74, 222, 128, 0.03)" : "rgba(255,255,255,0.02)",
-    border: `1px solid ${focused === field ? "var(--accent)" : "var(--glass-border)"}`,
-    padding: "14px 18px",
-    borderRadius: "8px",
+    background: "rgba(255, 255, 255, 0.02)",
+    border: "1px solid var(--border)",
+    padding: "12px 16px",
+    borderRadius: "var(--radius-sm)",
     color: "#fff",
-    fontFamily: "var(--font-mono)",
-    fontSize: "0.85rem",
+    fontFamily: "var(--font-body)",
+    fontSize: "0.88rem",
     outline: "none",
-    transition: "all 0.3s",
-    boxShadow: focused === field ? "0 0 20px rgba(74,222,128,0.1)" : "none",
-    resize: field === "message" ? "vertical" : "none"
-  });
+    transition: "var(--transition)"
+  };
 
   return (
-    <section id="contact" style={{ position: "relative", padding: "120px 20px" }}>
-      <div style={{ position: "absolute", left: "20px", top: "50%", transform: "translateY(-50%)", fontFamily: "var(--font-mono)", fontWeight: 800, color: "rgba(255,255,255,0.015)", fontSize: "20rem", pointerEvents: "none", zIndex: -1 }}>06</div>
+    <section id="contact">
+      <div style={{ maxWidth: "1150px", margin: "0 auto" }}>
+        
+        {/* Section Header */}
+        <div className="reveal" style={{ marginBottom: "40px" }}>
+          <div className="section-tag">
+            <span className="section-tag-dot"></span> Get In Touch
+          </div>
+          <h2 style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)", marginBottom: "16px", fontWeight: 800 }}>
+            Let's Discuss <span className="text-metallic">Your Next Project</span>.
+          </h2>
+          <p style={{ color: "var(--text-secondary)", maxWidth: "650px", fontSize: "1.05rem", lineHeight: 1.7 }}>
+            Available for freelance full-stack development, HealthTech architectures, real-time WebSocket systems, and ongoing technical partnerships.
+          </p>
+        </div>
 
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <p className="reveal" style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "var(--accent)", letterSpacing: "4px", marginBottom: "16px" }}>&gt; ping mehtab.dev</p>
-        <h2 className="reveal" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", marginBottom: "20px", fontFamily: "var(--font-display)" }}>
-          LET'S <span style={{ background: "linear-gradient(135deg, var(--accent), var(--secondary))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>CONNECT.</span>
-        </h2>
-        <p className="reveal" style={{ color: "var(--text-dim)", maxWidth: "500px", lineHeight: 1.7, marginBottom: "60px" }}>
-          Have a project, collab idea, or just want to talk code? I'm always online.
-        </p>
+        {/* 2 Column Layout */}
+        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: "36px", alignItems: "start" }}>
+          
+          {/* Left Column: Direct Contact Info */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            
+            {/* Email Card */}
+            <div style={{
+              padding: "20px 22px",
+              background: "var(--bg-card)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius-md)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              transition: "var(--transition)"
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = "var(--border-hover)"}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = "var(--border)"}>
+              <a href="mailto:mohamadmehtabahmed@gmail.com" style={{ display: "flex", alignItems: "center", gap: "14px", textDecoration: "none", color: "inherit", flexGrow: 1 }}>
+                <div style={{ padding: "10px", background: "var(--accent-muted)", borderRadius: "var(--radius-sm)", color: "var(--accent-light)", display: "flex" }}>
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <div style={{ fontSize: "0.72rem", fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>EMAIL</div>
+                  <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "#fff" }}>mohamadmehtabahmed@gmail.com</div>
+                </div>
+              </a>
+              <button
+                onClick={() => handleCopy("mohamadmehtabahmed@gmail.com", "email")}
+                title="Copy Email"
+                style={{ background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)", borderRadius: "var(--radius-sm)", color: copiedEmail ? "var(--accent-light)" : "var(--text-muted)", padding: "8px", cursor: "pointer", transition: "var(--transition)" }}
+              >
+                {copiedEmail ? <Check size={16} /> : <Copy size={16} />}
+              </button>
+            </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "start" }}>
-          {/* Left */}
-          <div className="reveal">
-            {/* Availability Banner */}
-            <div style={{ padding: "20px 24px", background: "rgba(74, 222, 128, 0.05)", border: "1px solid rgba(74, 222, 128, 0.2)", borderRadius: "12px", marginBottom: "36px", display: "flex", alignItems: "center", gap: "14px" }}>
-              <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 15px var(--accent)", flexShrink: 0, animation: "pulse 2s infinite" }}></div>
+            {/* Phone Card */}
+            <div style={{
+              padding: "20px 22px",
+              background: "var(--bg-card)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius-md)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              transition: "var(--transition)"
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = "var(--border-hover)"}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = "var(--border)"}>
+              <a href="tel:+923430519849" style={{ display: "flex", alignItems: "center", gap: "14px", textDecoration: "none", color: "inherit", flexGrow: 1 }}>
+                <div style={{ padding: "10px", background: "var(--accent-muted)", borderRadius: "var(--radius-sm)", color: "var(--accent-light)", display: "flex" }}>
+                  <Phone size={18} />
+                </div>
+                <div>
+                  <div style={{ fontSize: "0.72rem", fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>PHONE / WHATSAPP</div>
+                  <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "#fff" }}>+92 343 0519849</div>
+                </div>
+              </a>
+              <button
+                onClick={() => handleCopy("+923430519849", "phone")}
+                title="Copy Phone"
+                style={{ background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)", borderRadius: "var(--radius-sm)", color: copiedPhone ? "var(--accent-light)" : "var(--text-muted)", padding: "8px", cursor: "pointer", transition: "var(--transition)" }}
+              >
+                {copiedPhone ? <Check size={16} /> : <Copy size={16} />}
+              </button>
+            </div>
+
+            {/* Location Card */}
+            <div style={{
+              padding: "20px 22px",
+              background: "var(--bg-card)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius-md)",
+              display: "flex",
+              alignItems: "center",
+              gap: "14px"
+            }}>
+              <div style={{ padding: "10px", background: "rgba(255, 255, 255, 0.03)", borderRadius: "var(--radius-sm)", color: "var(--text-secondary)", display: "flex" }}>
+                <MapPin size={18} />
+              </div>
               <div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--accent)", letterSpacing: "2px", marginBottom: "3px" }}>STATUS: AVAILABLE</div>
-                <div style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "var(--text-dim)" }}>Open to freelance & full-time opportunities</div>
+                <div style={{ fontSize: "0.72rem", fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>LOCATION</div>
+                <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "#fff" }}>Rawalpindi, Pakistan (Open to Global Remote)</div>
               </div>
             </div>
 
-            {/* Social Links */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "40px" }}>
-              {socials.map((s, i) => (
-                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" style={{
-                  display: "flex", alignItems: "center", gap: "16px",
-                  padding: "18px 20px",
+            {/* Links */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+              <a
+                href="https://linkedin.com/in/mehtab-ahmed058"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  padding: "14px",
                   background: "var(--bg-card)",
-                  border: "1px solid var(--glass-border)",
-                  borderRadius: "12px",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius-sm)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                  color: "var(--text-primary)",
                   textDecoration: "none",
-                  transition: "all 0.3s",
-                  color: "#fff"
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                  transition: "var(--transition)"
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = s.color; e.currentTarget.style.transform = "translateX(8px)"; e.currentTarget.style.boxShadow = `0 0 20px ${s.color}20`; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--glass-border)"; e.currentTarget.style.transform = "translateX(0)"; e.currentTarget.style.boxShadow = "none"; }}>
-                  <div style={{ color: s.color, display: "flex", flexShrink: 0 }}>{s.icon}</div>
-                  <div style={{ flexGrow: 1 }}>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", color: "var(--text-dim)", letterSpacing: "2px", marginBottom: "3px" }}>{s.label}</div>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "#fff" }}>{s.value}</div>
-                  </div>
-                  <span style={{ color: "var(--text-dim)", fontSize: "1.2rem" }}>→</span>
-                </a>
-              ))}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-hover)"; e.currentTarget.style.background = "var(--bg-card-hover)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.background = "var(--bg-card)"; }}
+              >
+                <Linkedin size={16} color="#60a5fa" /> LinkedIn <ArrowUpRight size={14} color="var(--text-muted)" />
+              </a>
+
+              <a
+                href="https://github.com/Mehtab66"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  padding: "14px",
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius-sm)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                  color: "var(--text-primary)",
+                  textDecoration: "none",
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                  transition: "var(--transition)"
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-hover)"; e.currentTarget.style.background = "var(--bg-card-hover)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.background = "var(--bg-card)"; }}
+              >
+                <Github size={16} /> GitHub <ArrowUpRight size={14} color="var(--text-muted)" />
+              </a>
             </div>
 
-            {/* Fun stats */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "12px" }}>
-              {[
-                { icon: <Terminal size={16} />, val: "50K+", label: "Lines Written" },
-                { icon: <Code2 size={16} />, val: "15+", label: "Projects" },
-                { icon: <Cpu size={16} />, val: "99.9%", label: "Uptime" },
-              ].map((s, i) => (
-                <div key={i} style={{ padding: "16px", background: "var(--bg-card)", border: "1px solid var(--glass-border)", borderRadius: "8px", textAlign: "center" }}>
-                  <div style={{ color: "var(--accent)", marginBottom: "8px", display: "flex", justifyContent: "center" }}>{s.icon}</div>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", fontWeight: 800, color: "#fff" }}>{s.val}</div>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", color: "var(--text-dim)", letterSpacing: "1px", marginTop: "2px" }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right: Form */}
-          <div className="reveal">
-            <div style={{ padding: "40px", background: "var(--bg-card)", border: "1px solid var(--glass-border)", borderRadius: "16px", position: "relative", overflow: "hidden" }}>
-              <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--text-dim)", letterSpacing: "3px", marginBottom: "28px" }}>// SEND A MESSAGE</p>
+          {/* Right Column: Message Form */}
+          <div style={{
+            padding: "32px",
+            background: "var(--bg-card)",
+            border: "1px solid var(--border)",
+            borderRadius: "var(--radius-lg)"
+          }}>
+            <h3 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#fff", marginBottom: "6px" }}>
+              Send an Inquiry
+            </h3>
+            <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "20px" }}>
+              Fill out the form below to initiate an email directly.
+            </p>
 
-              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <input
-                  type="text" placeholder="Your Name" required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  onFocus={() => setFocused("name")}
-                  onBlur={() => setFocused(null)}
-                  style={inputStyle("name")}
-                />
-                <input
-                  type="email" placeholder="Your Email" required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  onFocus={() => setFocused("email")}
-                  onBlur={() => setFocused(null)}
-                  style={inputStyle("email")}
-                />
-                <textarea
-                  placeholder="Your Message" rows="5" required
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  onFocus={() => setFocused("message")}
-                  onBlur={() => setFocused(null)}
-                  style={inputStyle("message")}
-                />
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+              <input
+                type="text"
+                placeholder="Your Name or Company"
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                style={inputStyle}
+                onFocus={(e) => e.target.style.borderColor = "var(--accent-light)"}
+                onBlur={(e) => e.target.style.borderColor = "var(--border)"}
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                style={inputStyle}
+                onFocus={(e) => e.target.style.borderColor = "var(--accent-light)"}
+                onBlur={(e) => e.target.style.borderColor = "var(--border)"}
+              />
+              <textarea
+                placeholder="Details regarding your project, timeline, or architecture..."
+                rows="4"
+                required
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                style={{ ...inputStyle, resize: "vertical" }}
+                onFocus={(e) => e.target.style.borderColor = "var(--accent-light)"}
+                onBlur={(e) => e.target.style.borderColor = "var(--border)"}
+              />
 
-                <button type="submit" style={{
-                  display: "flex", justifyContent: "center", alignItems: "center", gap: "10px",
-                  padding: "16px",
-                  background: status === "success" ? "rgba(74,222,128,0.15)" : "var(--accent)",
-                  color: status === "success" ? "var(--accent)" : "#000",
-                  border: status === "success" ? "1px solid var(--accent)" : "none",
-                  borderRadius: "8px",
-                  cursor: "pointer",
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.8rem",
+              <button
+                type="submit"
+                style={{
+                  padding: "12px",
+                  background: status === "success" ? "var(--accent-muted)" : "var(--accent)",
+                  color: status === "success" ? "var(--accent-light)" : "#090a0f",
+                  border: status === "success" ? "1px solid var(--accent-border)" : "none",
+                  borderRadius: "var(--radius-sm)",
+                  fontFamily: "var(--font-body)",
                   fontWeight: 700,
-                  letterSpacing: "2px",
-                  transition: "all 0.3s"
-                }}>
-                  {status === "sending" ? "SENDING..." : status === "success" ? "✓ MESSAGE SENT!" : <><Send size={16} /> SEND MESSAGE</>}
-                </button>
-              </form>
-
-              {/* Corner glow */}
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "1px", background: "linear-gradient(90deg, transparent, var(--accent)50, transparent)" }}></div>
-            </div>
+                  fontSize: "0.88rem",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                  transition: "var(--transition)"
+                }}
+              >
+                {status === "sending" ? "Preparing..." : status === "success" ? "✓ Inquiry Ready!" : <><Send size={16} /> Send Message</>}
+              </button>
+            </form>
           </div>
+
         </div>
+
       </div>
 
       <style>{`
-        @keyframes pulse { 0%, 100% { box-shadow: 0 0 8px var(--accent); } 50% { box-shadow: 0 0 20px var(--accent); } }
-        input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); font-family: var(--font-mono); }
-        @media (max-width: 900px) { #contact > div > div:last-child { grid-template-columns: 1fr !important; gap: 40px !important; } }
+        @media (max-width: 860px) {
+          #contact > div > div:last-child { grid-template-columns: 1fr !important; }
+        }
       `}</style>
     </section>
   );
