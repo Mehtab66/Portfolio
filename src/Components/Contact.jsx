@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Send, Copy, Check, ArrowUpRight } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Copy, Check, ArrowUpRight, AlertCircle, CheckCircle2, ExternalLink } from "lucide-react";
 
 const Contact = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState("idle"); // 'idle' | 'sending' | 'success' | 'config_missing' | 'error'
+  const [statusMessage, setStatusMessage] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleCopy = (text, type) => {
@@ -18,14 +20,53 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
-    setTimeout(() => {
-      setStatus("success");
-      const mailtoLink = `mailto:mohamadmehtabahmed@gmail.com?subject=Project Inquiry: ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message + "\n\nFrom: " + formData.name + " (" + formData.email + ")")}`;
-      window.location.href = mailtoLink;
-    }, 800);
+    setStatusMessage("Sending message to Mehtab...");
+
+    const serviceId = (import.meta.env.VITE_EMAILJS_SERVICE_ID || import.meta.env.VITE_SERVICE || "").trim();
+    const templateId = (import.meta.env.VITE_EMAILJS_TEMPLATE_ID || import.meta.env.VITE_TEMPLATE || "").trim();
+    const publicKey = (import.meta.env.VITE_EMAILJS_PUBLIC_KEY || import.meta.env.VITE_PUBLIC || "").trim();
+
+    // Check if EmailJS keys are configured in .env
+    if (serviceId && templateId && publicKey) {
+      try {
+        const templateParams = {
+          from_name: formData.name,
+          name: formData.name,
+          from_email: formData.email,
+          email: formData.email,
+          reply_to: formData.email,
+          message: formData.message,
+          to_name: "Mehtab Ahmed"
+        };
+
+        await emailjs.send(serviceId, templateId, templateParams, publicKey);
+        setStatus("success");
+        setStatusMessage("Message sent successfully! I will reply to you shortly.");
+        setFormData({ name: "", email: "", message: "" });
+      } catch (err) {
+        console.error("EmailJS sending error:", err);
+        setStatus("error");
+        setStatusMessage(`Email delivery failed (${err?.text || err?.message || "Check EmailJS setup"}). You can email directly below.`);
+      }
+    } else {
+      // Clear notification when keys are missing in .env
+      const missing = [];
+      if (!serviceId) missing.push("Service ID");
+      if (!templateId) missing.push("Template ID");
+      if (!publicKey) missing.push("Public Key");
+
+      setStatus("config_missing");
+      setStatusMessage(`Missing EmailJS ${missing.join(" & ")} in .env. Add them to .env or send directly via email client.`);
+    }
+  };
+
+  const openEmailClient = () => {
+    const subject = encodeURIComponent(`Project Inquiry from ${formData.name || "Client"}`);
+    const body = encodeURIComponent(`${formData.message}\n\n---\nFrom: ${formData.name}\nEmail: ${formData.email}`);
+    window.open(`mailto:mohamadmehtabahmed@gmail.com?subject=${subject}&body=${body}`, '_blank');
   };
 
   const inputStyle = {
@@ -82,7 +123,7 @@ const Contact = () => {
                   <Mail size={18} />
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.72rem", fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>EMAIL</div>
+                  <div style={{ fontSize: "0.72rem", fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>EMAIL DIRECTLY</div>
                   <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "#fff" }}>mohamadmehtabahmed@gmail.com</div>
                 </div>
               </a>
@@ -211,13 +252,14 @@ const Contact = () => {
               Send an Inquiry
             </h3>
             <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "20px" }}>
-              Fill out the form below to initiate an email directly.
+              Have a question or project in mind? Drop a message below.
             </p>
 
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
               <input
                 type="text"
-                placeholder="Your Name or Company"
+                name="name"
+                placeholder="Your Name or Organization"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -227,6 +269,7 @@ const Contact = () => {
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
                 required
                 value={formData.email}
@@ -236,6 +279,7 @@ const Contact = () => {
                 onBlur={(e) => e.target.style.borderColor = "var(--border)"}
               />
               <textarea
+                name="message"
                 placeholder="Details regarding your project, timeline, or architecture..."
                 rows="4"
                 required
@@ -248,25 +292,72 @@ const Contact = () => {
 
               <button
                 type="submit"
+                disabled={status === "sending"}
                 style={{
-                  padding: "12px",
-                  background: status === "success" ? "var(--accent-muted)" : "var(--accent)",
-                  color: status === "success" ? "var(--accent-light)" : "#090a0f",
-                  border: status === "success" ? "1px solid var(--accent-border)" : "none",
+                  padding: "13px",
+                  background: status === "sending" ? "var(--text-dim)" : "var(--accent)",
+                  color: "#090a0f",
+                  border: "none",
                   borderRadius: "var(--radius-sm)",
                   fontFamily: "var(--font-body)",
                   fontWeight: 700,
                   fontSize: "0.88rem",
-                  cursor: "pointer",
+                  cursor: status === "sending" ? "not-allowed" : "pointer",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "8px",
-                  transition: "var(--transition)"
+                  transition: "var(--transition)",
+                  opacity: status === "sending" ? 0.7 : 1
                 }}
               >
-                {status === "sending" ? "Preparing..." : status === "success" ? "✓ Inquiry Ready!" : <><Send size={16} /> Send Message</>}
+                {status === "sending" ? "Sending..." : <><Send size={16} /> Send Message</>}
               </button>
+
+              {/* Status Alert Notification */}
+              {status !== "idle" && (
+                <div style={{
+                  marginTop: "6px",
+                  padding: "12px 14px",
+                  borderRadius: "var(--radius-sm)",
+                  fontSize: "0.82rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "8px",
+                  background: status === "success" ? "rgba(16, 185, 129, 0.1)" : status === "config_missing" ? "rgba(245, 158, 11, 0.1)" : "rgba(239, 68, 68, 0.1)",
+                  border: `1px solid ${status === "success" ? "rgba(16, 185, 129, 0.3)" : status === "config_missing" ? "rgba(245, 158, 11, 0.3)" : "rgba(239, 68, 68, 0.3)"}`,
+                  color: status === "success" ? "#34d399" : status === "config_missing" ? "#fbbf24" : "#f87171"
+                }}>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                    {status === "success" ? <CheckCircle2 size={16} style={{ flexShrink: 0, marginTop: "2px" }} /> : <AlertCircle size={16} style={{ flexShrink: 0, marginTop: "2px" }} />}
+                    <div>{statusMessage}</div>
+                  </div>
+
+                  {(status === "config_missing" || status === "error") && (
+                    <div style={{ display: "flex", gap: "10px", marginTop: "4px" }}>
+                      <button
+                        type="button"
+                        onClick={openEmailClient}
+                        style={{
+                          padding: "6px 12px",
+                          background: "rgba(255, 255, 255, 0.1)",
+                          border: "1px solid currentColor",
+                          borderRadius: "var(--radius-sm)",
+                          color: "inherit",
+                          fontSize: "0.75rem",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "4px"
+                        }}
+                      >
+                        Open In Email App <ExternalLink size={12} />
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
             </form>
           </div>
 
